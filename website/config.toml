@@ -7,3 +7,7 @@ publishDir = '../docs'
 # For search functionality
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
+
+[params]
+landingPageURL=baseURL
+isMultiLingual=true
