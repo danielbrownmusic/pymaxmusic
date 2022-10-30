@@ -1,0 +1,9 @@
+baseURL = 'https://danielims.github.io/pymaxmusic/'
+languageCode = 'en-us'
+title = 'PyMaxMusic'
+theme = "hugo-theme-learn"
+publishDir = '../docs'
+
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
