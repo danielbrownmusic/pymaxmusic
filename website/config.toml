@@ -9,5 +9,5 @@ publishDir = '../docs'
 home = [ "HTML", "RSS", "JSON"]
 
 [params]
-landingPageURL=baseURL
+landingPageURL='https://danielims.github.io/pymaxmusic/'
 isMultiLingual=true
