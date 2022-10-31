@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Max Objects on PyMaxMusic</title>
+    <link>https://danielims.github.io/pymaxmusic/max_objects/</link>
+    <description>Recent content in Max Objects on PyMaxMusic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://danielims.github.io/pymaxmusic/max_objects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pyobj</title>
+      <link>https://danielims.github.io/pymaxmusic/max_objects/pyobj/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://danielims.github.io/pymaxmusic/max_objects/pyobj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pygen</title>
+      <link>https://danielims.github.io/pymaxmusic/max_objects/pygen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://danielims.github.io/pymaxmusic/max_objects/pygen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pynote</title>
+      <link>https://danielims.github.io/pymaxmusic/max_objects/pynote/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://danielims.github.io/pymaxmusic/max_objects/pynote/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

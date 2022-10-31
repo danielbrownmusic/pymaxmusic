@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python Commands on PyMaxMusic</title>
+    <link>https://danielims.github.io/pymaxmusic/python_commands/</link>
+    <description>Recent content in Python Commands on PyMaxMusic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://danielims.github.io/pymaxmusic/python_commands/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>open_pymax</title>
+      <link>https://danielims.github.io/pymaxmusic/python_commands/open_pymax/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://danielims.github.io/pymaxmusic/python_commands/open_pymax/</guid>
+      <description>pymax.open_pymax() Starts a pymax connection. You must call this before you do anything with pymax (add objects or run the system).</description>
+    </item>
+    
+    <item>
+      <title>add_object</title>
+      <link>https://danielims.github.io/pymaxmusic/python_commands/add_object/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://danielims.github.io/pymaxmusic/python_commands/add_object/</guid>
+      <description>pymax.add_object( &amp;lt; object_name &amp;gt;, &amp;lt; object &amp;gt; ) &amp;amp;lt; object_name&amp;amp;gt; : stringA string that will be used in Max/MSP to call the object.&amp;lt; object&amp;gt; The object to be called.
+Adds an already constructed object to the Pymax system, giving it the given object name, which the Max pyobj will use to call this object. For example, the following code will add foo, an instance of class Foo, to the system.</description>
+    </item>
+    
+    <item>
+      <title>add_class</title>
+      <link>https://danielims.github.io/pymaxmusic/python_commands/add_class/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://danielims.github.io/pymaxmusic/python_commands/add_class/</guid>
+      <description>pymax.add_class( &amp;lt; object_name &amp;gt;, &amp;lt; class &amp;gt;, &amp;lt; arguments to class constructor &amp;gt; ) Constructs a new object of class class_type, passing the given initialization arguments to the class constructor, and puts this object in the Pymax system, giving the object the given object name, which the Max pyobj will use to call this object.
+If you don’t need or want to declare an object instance, you can use add_class, which will create a named instance of the class that the Pymax system will use.</description>
+    </item>
+    
+    <item>
+      <title>add_generator</title>
+      <link>https://danielims.github.io/pymaxmusic/python_commands/add_generator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://danielims.github.io/pymaxmusic/python_commands/add_generator/</guid>
+      <description>pymax.add_generator( &amp;lt; generator_name &amp;gt;, &amp;lt; generator_function &amp;gt;, &amp;lt; arguments to generator_function &amp;gt; ) Adds a generator to the Pymax system, which can be called by a pygen Max object</description>
+    </item>
+    
+    <item>
+      <title>run_pymax</title>
+      <link>https://danielims.github.io/pymaxmusic/python_commands/run_pymax/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://danielims.github.io/pymaxmusic/python_commands/run_pymax/</guid>
+      <description>pymax.run_pymax() Opens the communication with Max.</description>
+    </item>
+    
+  </channel>
+</rss>

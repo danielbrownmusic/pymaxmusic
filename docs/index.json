@@ -1,0 +1,148 @@
+[
+{
+	"uri": "https://danielims.github.io/pymaxmusic/installation/",
+	"title": "Installation",
+	"tags": [],
+	"description": "",
+	"content": "PymaxMusic contains both a Python package and a Max package, both of which need to be installed. Pymax uses CNMAT’s osc4py3 library, which you need to install before using. (https://pypi.org/project/osc4py3/)\nTo install the Python package: Install osc4py3:\nWindows\rMac or Linux\rpy -m pip install osc4py3 python3 -m pip install osc4py3 Install pymaxmusic:\nWindows\rMac or Linux\rpy -m pip install pymaxmusic python3 -m pip install pymaxmusic Conversely, you can install pymaxmusic from its source at github/ims/pymaxmusic.\nTo install the Max package: From github/ims/pymaxmusic/Max, download the “pymaxmusic_maxpackage” folder and place it in your Max packages folder (probably Documents/Max/Packages).\n"
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/python_commands/open_pymax/",
+	"title": "open_pymax",
+	"tags": [],
+	"description": "",
+	"content": "pymax.open_pymax() Starts a pymax connection. You must call this before you do anything with pymax (add objects or run the system).\n"
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/usage/overview/",
+	"title": "Overview",
+	"tags": [],
+	"description": "",
+	"content": "Objects and generators that are added to the Pymax system in your Python code can be called by pyobj, pygen, and pynote Max objects in your Max patch.\nThe following Python code…\nfrom pymaxmusic import pymax def single_event_generator(): yield [1000, \u0026#34;hello world\u0026#34;] pymax.open_pymax() pymax.add_generator(\u0026#34;say_hello\u0026#34;, single_event_generator) pymax.run_pymax() …will produce, after one second (1000 ms), the following Max output:\nBasic usage is this:\nWrite a Python file that defines classes and generators and opens and runs pymax. Write a Max patch that calls this Python file using pymax subpatchers (pyobj, pygen, pynote). Run the Python file, either from your IDE or the command line. Control the Python classes and get output in your Max patch. To close Pymax, use Ctrl-C. A new pymax session won’t run until you close a previous one, due to udp port usage (you can get around this by setting different ports manually). Note that any messages you send from Max will only be received by the Python side if run_pymax() has been called. So if you trigger messages in a max patch using loadbang or loadmess, these will not be received by Python unless run_pymax() has been called (that is, your module has started running) before these messages have been triggered (that is, before the Max patch has been opened).\n"
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/max_objects/pyobj/",
+	"title": "pyobj",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/python_commands/add_object/",
+	"title": "add_object",
+	"tags": [],
+	"description": "",
+	"content": "pymax.add_object( \u0026lt; object_name \u0026gt;, \u0026lt; object \u0026gt; ) \u0026amp;lt; object_name\u0026amp;gt; : string\rA string that will be used in Max/MSP to call the object.\r\u0026lt; object\u0026gt; The object to be called.\nAdds an already constructed object to the Pymax system, giving it the given object name, which the Max pyobj will use to call this object. For example, the following code will add foo, an instance of class Foo, to the system. In Max/MSP, you can create an object with pyobj foo_name, which will accept the messages get a and set a \u0026lt; value \u0026gt; :\nclass Foo(): def init(self): self.bar = 2\nfoo_instance = Foo() pymax.add_object(“foo_name”, foo )\n"
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/usage/controlling_objects/",
+	"title": "Controlling Objects",
+	"tags": [],
+	"description": "",
+	"content": "A Python object added to the Pymax system (using either pymax.add_object() or pymax.add_class()) with the name “my_object” can be called by pyobj object with the name as its only argument:\nIn Python:\nfrom pymaxmusic import pymax class MyObject(): def __init__(self): self.a = 2 pymax.open_pymax() pymax.add_class(\u0026#34;my_object\u0026#34;, MyObject) pymax.run_pymax() Then in Max:\nYou can get and set the object’s member variables using messages to the object:\nUse a message to also call an object’s member function:\nfrom pymaxmusic import pymax class MyObject(): def __init__(self): self.a = 2 def add_a(self, value): return self.a + value pymax.open_pymax() pymax.add_class(\u0026#34;my_object\u0026#34;, MyObject) pymax.run_pymax() "
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/max_objects/pygen/",
+	"title": "pygen",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/usage/",
+	"title": "Usage",
+	"tags": [],
+	"description": "",
+	"content": "USAGE "
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/python_commands/add_class/",
+	"title": "add_class",
+	"tags": [],
+	"description": "",
+	"content": "pymax.add_class( \u0026lt; object_name \u0026gt;, \u0026lt; class \u0026gt;, \u0026lt; arguments to class constructor \u0026gt; ) Constructs a new object of class class_type, passing the given initialization arguments to the class constructor, and puts this object in the Pymax system, giving the object the given object name, which the Max pyobj will use to call this object.\nIf you don’t need or want to declare an object instance, you can use add_class, which will create a named instance of the class that the Pymax system will use.\nFor example, the following code creates an instance of class Baz, initialized with arguments 2 and “hello,” which can be called in Max with the object pyobj baz:\nclass Baz(): def __init__(self, some_int, some_string): self.a = some_int self.b = some_string pymax.add_class(“baz”, Baz, 2, “hello”) This does exactly the same thing as\nbaz = Baz(2, “hello”) pymax.add_object(“baz”, baz) "
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/usage/playing_events/",
+	"title": "Playing Events",
+	"tags": [],
+	"description": "",
+	"content": "Generators are used in Pymax to produce events over time. You can have tempo-dependent events (metrical timing), or tempo-independent events (fixed time).\nTo send data to Max over time, write a generator that yields a list of the data. The only requirement for the list is that the first element must be the ontime at which this data will be sent.\nTempo-independent ontimes are measured in milliseconds. The following Python generator sends, every 12 milliseconds, the x and y values of a 1 Hz sine wave. There are thus three elements in the list that the generator yields:\nThe ontime (required) in milliseconds, The x-value, which is just the ontime itself, The y-value: sin(2𝜋 * time_in_seconds) import math def sine_wave(): ontime_in_ms = 0 while True: yield [ontime_in_ms, ontime_in_ms, math.sin(2 * math.pi * ontime_in_ms/1000)] ontime_in_ms += 12 if __name__ == \u0026#34;__main__\u0026#34;: from pymaxmusic import pymax pymax.open_pymax() pymax.add_generator(\u0026#34;sine_wave\u0026#34;, sine_wave) pymax.run_pymax() To call this generator from max, create a pygen object. The pygen object takes two arguments, not one like the pyobj obj. The first argument is the type of time increment being used. There are two choices: ms for fixed-time events, and beats for tempo-dependent events. The second argument is the name of the generator.\nMetrical Time and Tempo To use metrical time, use “beats” as the first argument to the pygen object. When you do this, you can change the tempo by sending a number into the rightmost inlet of the pygen object (if you don’t set the tempo, by default it will be 60). Then, in the Python generator, the first element of the list it yields (the ontime) should be in terms of beats. In the following example, the generator plays an ascending C major scale in an infinite loop. The ontime increases in increments of .5, meaning half a beat. So if the tempo is set at 60, the generator will play 120 notes every minute.\ndef c_major_scale_loop(): c_major_scale = [60, 62, 64, 65, 67, 69, 71, 72] ontime = 0.0 i = 0 while True: yield [ontime, c_major_scale[i]] i = (i + 1) % len(c_major_scale) ontime += .5 if __name__ == \u0026#34;__main__\u0026#34;: from pymaxmusic import pymax pymax.open_pymax() pymax.add_generator(\u0026#34;c_maj_loop\u0026#34;, c_major_scale_loop) pymax.run_pymax() "
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/max_objects/pynote/",
+	"title": "pynote",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/python_commands/",
+	"title": "Python Commands",
+	"tags": [],
+	"description": "",
+	"content": "PYTHON COMMANDS "
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/python_commands/add_generator/",
+	"title": "add_generator",
+	"tags": [],
+	"description": "",
+	"content": "pymax.add_generator( \u0026lt; generator_name \u0026gt;, \u0026lt; generator_function \u0026gt;, \u0026lt; arguments to generator_function \u0026gt; ) Adds a generator to the Pymax system, which can be called by a pygen Max object\n"
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/max_objects/",
+	"title": "Max Objects",
+	"tags": [],
+	"description": "",
+	"content": "MAX OBJECTS "
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/usage/playing_notes/",
+	"title": "Playing Notes",
+	"tags": [],
+	"description": "",
+	"content": "If you’re working with notes a lot, you can use the pynote object instead of the pygen object to pend out note information. In this case, your Python generator needs to be a list of five elements in this order:\n[ ontime, pitch, velocity, duration, channel ] That is, the ontime first (which is what Pymax needs), followed by the fields used by the “makenote” and “noteout” Max objects. The pynote object just wraps the pygen object and a makenote object so that the output can be easily sent to a noteout object. One more nice thing about using the pynote object is that you can give your note duration in beats, just like your ontime. So a loud middle C eighth note starting immediately would be:\n[ 0.0, 60, 100, .5, 1] And a loud middle C sixteenth note starting immediately would be:\n[ 0.0, 60, 100, .25, 1] The second (middle) inlet of the pygen object takes messages. So far the only message you can send it is “reset.” This will reset the generator so that it will start from the beginning (under the hood: it just constructs a new generator function based on the arguments you gave it in pymax.add_generator()).\n"
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/",
+	"title": "Pymaxmusic",
+	"tags": [],
+	"description": "",
+	"content": "PYMAXMUSIC PyMaxMusic is a simple framework for communication between Python and Max/MSP, with an emphasis on real-time music generation.\nIt can either be viewed as a way to use Max/MSP as an interface for controlling a music composition system written in Python, or, conversely, as a way to control Max/MSP patches using Python. The first way is better for note-based (“traditional”) music generation, the second way is better for electroacoustic music.\nPymax is designed around two ideas:\nFirst, Python generators are called by the Pymax system to produce events (notes or sounds) over time. You can make these events tempo-dependent or not.\nSecond, objects that you declare in your Python code can be reflected by Max objects which allow you to get and set object variables and call object methods.\nThis way, Python objects can be used as “controls” which manipulate the parameters of the events that the generators create. Create any number of Python classes to act as controls, and then any number of generators that take instances of these classes to their constructors. The generators will produce events in Max over time, whose parameters you can via the Max interfaces to the “control” objects.\nThis is a very simple architecture that allows you to write music-generation systems cleanly and easily, focusing on the process of creating music.\nPython is fantastic for building systems with very complicated architectures. If you’re comfortable with command-line coding, you can write in just a few lines an algorithm that would require a lot of patching in a visual language like Max. And Python has piles of libraries that do anything you want. You can use all the capabilities of Python to compose musical material, and then send it to Max for playback. And then, of course, you can use all of MSP’s fantastic audio capabilities to make your notes sound great.\nPython is not fast enough for DSP, so neither is PyMaxMusic. Audio processing is done tens of thousands of times a second. But musical information moves at a different, much slower rate than audio. Really fast musical events may occur between ten or so times a second, but often take several seconds to occur.\nIn essence, PyMaxMusic treats Python as the composer, and Max/MSP as the performer.\n"
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/python_commands/run_pymax/",
+	"title": "run_pymax",
+	"tags": [],
+	"description": "",
+	"content": "pymax.run_pymax() Opens the communication with Max.\n"
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/tutorials/",
+	"title": "Video Tutorials",
+	"tags": [],
+	"description": "",
+	"content": "Tutorial 1 Sending events from Python to Max Tutorial 2 Changing tempo Tutorial 3 Changing event parameters in real time "
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/examples/",
+	"title": "Examples",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://danielims.github.io/pymaxmusic/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
