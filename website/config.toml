@@ -14,7 +14,3 @@ isMultiLingual=true
 
 disableLandingPageButton = true
 
-[Languages]
-[Languages.en]
-landingPageURL = "/kuramoto-cicada"
-landingPageName = "<i class='fas fa-home'></i> Redirect to Home"
