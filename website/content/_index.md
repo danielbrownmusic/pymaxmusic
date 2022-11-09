@@ -6,10 +6,10 @@ pre: "<b>1. </b>"
 
 # PYMAXMUSIC
 
-##### Author: [Daniel Brown](http://www.danielbrownmusic.com)
+##### Copyright 2022 by [Daniel Brown](http://www.danielbrownmusic.com)
 
   
-PyMaxMusic is a simple framework for communication between Python and Max/MSP, with an emphasis on real-time music generation.  
+**PyMaxMusic** is a simple framework for communication between Python and Max/MSP, with an emphasis on real-time music generation.  
   
 
 It can either be viewed as a way to use Max/MSP as an interface for controlling a music composition system written in Python, or, conversely, as a way to control Max/MSP patches using Python. The first way is better for note-based (“traditional”) music generation, the second way is better for electroacoustic music.  
