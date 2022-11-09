@@ -11,6 +11,7 @@ home = [ "HTML", "RSS", "JSON"]
 [params]
 landingPageURL='https://danielims.github.io/pymaxmusic/'
 isMultiLingual=true
+themeVariant = "blue"
 
 disableLandingPageButton = true
 
