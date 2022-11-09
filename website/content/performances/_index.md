@@ -15,7 +15,7 @@ weight: 55
 **_Pyral_** by Irene Bosinaki
 {{< youtube 2YU7eEBe9Ss >}}
 
-**_I think I know this one_** by Apostolis 
+**_I think I know this one_** by Apostolis Armagos
 {{< youtube uFjIMxtHBLU >}}
 
 **_Study of Chromatic Scale_** by Christina Georgiou
