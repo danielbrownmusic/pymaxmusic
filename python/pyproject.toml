@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pymaxmusic"
-version = "0.0.2"
+version = "0.0.4"
 authors = [
   { name="Daniel Brown", email="daniel@intelligentmuscisystems.com" },
 ]
@@ -16,5 +16,10 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+[tool.hatch.build]
+include = [
+  "/maxhelp_python_modules",
+]
+
 [project.urls]
-"Homepage" = "https://github.com/danielims/pymax"
+"Homepage" = "https://danielims.github.io/pymaxmusic/"
