@@ -22,3 +22,7 @@ weight: 55
 
 **_Study of Chromatic Scale_** by Christina Georgiou
 {{< youtube YQHC5_V1nLs >}}
+
+**_Untitled Improvisation_** by Flora Malla
+{{< youtube 9j2fznIeQxY >}}
+

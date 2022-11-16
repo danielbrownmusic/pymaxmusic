@@ -1,4 +1,4 @@
-baseURL = 'https://danielims.github.io/pymaxmusic/'
+baseURL = 'https://danielims.github.io/pymaxmusic'
 languageCode = 'en-us'
 title = 'PyMaxMusic'
 theme = "hugo-theme-learn"
