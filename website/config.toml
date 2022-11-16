@@ -10,10 +10,10 @@ home = [ "HTML", "RSS", "JSON"]
 
 [params]
 disableLandingPageButton = true
+themeVariant = "blue"
 
 [Languages]
 [Languages.en]
 landingPageURL = "/pymaxmusic"
 landingPageName = "<i class='fas fa-home'></i> Redirect to Home"
-
 
