@@ -1,4 +1,4 @@
-baseURL = 'https://danielims.github.io/pymaxmusic'
+baseURL = 'https://danielbrownmusic.github.io/pymaxmusic'
 languageCode = 'en-us'
 title = 'PyMaxMusic'
 theme = "hugo-theme-learn"
@@ -9,9 +9,11 @@ publishDir = '../docs'
 home = [ "HTML", "RSS", "JSON"]
 
 [params]
-landingPageURL='https://danielims.github.io/pymaxmusic/'
-isMultiLingual=true
-themeVariant = "blue"
-
 disableLandingPageButton = true
+
+[Languages]
+[Languages.en]
+landingPageURL = "/pymaxmusic"
+landingPageName = "<i class='fas fa-home'></i> Redirect to Home"
+
 
